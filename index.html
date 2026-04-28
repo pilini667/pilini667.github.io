@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Polina Zherebtsova — Quality Filter</title>
+  <meta name="description" content="Creative one-page QA profile for Polina Zherebtsova — Manual QA Engineer focused on Web, Mobile, API and AI-assisted QA workflows." />
+
+  <style>
+    :root {
+      --bg: #090912;
+      --ink: #f8f7ff;
+      --muted: #a9a7bc;
+      --violet: #9b5cff;
+      --cyan: #28d7ff;
+      --pink: #ff5ea8;
+      --orange: #ffb45c;
+      --green: #52e6a7;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.13);
+      --line: rgba(255,255,255,.15);
+      --dark: #121225;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(155,92,255,.36), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(40,215,255,.28), transparent 28%),
+        radial-gradient(circle at 50% 92%, rgba(255,94,168,.18), transparent 34%),
+        var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 75%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      margin: 14px auto 36px;
+      width: min(1120px, calc(100% - 32px));
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(9,9,18,.66);
+      backdrop-filter: blur(18px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: drop .8s ease both;
+    }
+
+    @keyframes drop {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      min-width: 0;
+    }
+
+    .logo span:last-child {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      box-shadow: 0 0 30px rgba(155,92,255,.45);
+    }
+
+    .links {
+      display: flex;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .links a:hover { color: var(--ink); }
+
+    .hero {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: center;
+      padding: 36px 0 70px;
+    }
+
+    .kicker {
+      width: fit-content;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 22px;
+      animation: rise .8s .05s ease both;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(56px, 9vw, 116px);
+      line-height: .82;
+      letter-spacing: -.085em;
+      animation: rise .8s .12s ease both;
+    }
+
+    .grad {
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+      animation: rise .8s .2s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+      animation: rise .8s .28s ease both;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-weight: 900;
+      background: rgba(255,255,255,.08);
+      transition: .25s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      border: 0;
+      box-shadow: 0 18px 50px rgba(40,215,255,.18);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      filter: brightness(1.1);
+    }
+
+    .orbit {
+      position: relative;
+      min-height: 600px;
+      animation: rise .9s .2s ease both;
+    }
+
+    .qa-core {
+      position: absolute;
+      inset: 50%;
+      transform: translate(-50%,-50%);
+      width: 260px;
+      height: 260px;
+      border-radius: 36px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,.06)),
+        linear-gradient(135deg, var(--violet), var(--cyan));
+      border: 1px solid rgba(255,255,255,.24);
+      box-shadow:
+        0 24px 90px rgba(155,92,255,.35),
+        inset 0 0 50px rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .qa-core strong {
+      display: block;
+      font-size: 74px;
+      letter-spacing: -.08em;
+      line-height: .85;
+    }
+
+    .qa-core span {
+      color: rgba(255,255,255,.78);
+      font-weight: 800;
+    }
+
+    .bubble {
+      position: absolute;
+      width: 178px;
+      min-height: 124px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(18px);
+      border-radius: 26px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.22);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .bubble h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .bubble p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .b1 { top: 32px; left: 30px; animation-delay: .1s; }
+    .b2 { top: 70px; right: 18px; animation-delay: .6s; }
+    .b3 { bottom: 90px; left: 0; animation-delay: .9s; }
+    .b4 { bottom: 40px; right: 44px; animation-delay: .3s; }
+    .b5 { top: 246px; right: -6px; animation-delay: 1.2s; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .section {
+      margin: 42px 0;
+      padding: 34px;
+      border-radius: 36px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.075);
+      backdrop-filter: blur(18px);
+      animation: appear linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(45px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .9;
+      letter-spacing: -.07em;
+    }
+
+    .section-sub {
+      max-width: 520px;
+      color: var(--muted);
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .case {
+      min-height: 250px;
+      padding: 22px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.055));
+      position: relative;
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .case:hover {
+      transform: translateY(-8px) rotate(-.5deg);
+      border-color: rgba(255,255,255,.34);
+    }
+
+    .case::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      right: -45px;
+      bottom: -45px;
+      border-radius: 50%;
+      background: var(--accent, var(--violet));
+      opacity: .22;
+      filter: blur(2px);
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.11);
+      border: 1px solid var(--line);
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+    }
+
+    .case h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .case p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 24px;
+      padding: 22px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+    }
+
+    .job-title {
+      font-weight: 950;
+      font-size: 20px;
+      letter-spacing: -.03em;
+    }
+
+    .job-date {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .job p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid var(--line);
+      color: rgba(255,255,255,.9);
+      font-weight: 850;
+      transition: .2s;
+    }
+
+    .skill:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.15);
+    }
+
+    .contact {
+      text-align: center;
+      padding: 60px 24px;
+      margin: 50px 0 24px;
+      border-radius: 40px;
+      background:
+        linear-gradient(135deg, rgba(155,92,255,.28), rgba(40,215,255,.18)),
+        rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+    }
+
+    .contact h2 {
+      margin: 0 0 14px;
+      font-size: clamp(38px, 6vw, 74px);
+      line-height: .9;
+      letter-spacing: -.075em;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 0 auto 26px;
+      max-width: 600px;
+    }
+
+    .mobile-note { display: none; }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: unset;
+      }
+
+      .orbit {
+        min-height: 520px;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .job {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-sub {
+        margin-top: 14px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .links { display: none; }
+      .nav {
+        width: min(1120px, calc(100% - 20px));
+        padding: 10px 12px;
+      }
+      .logo span:last-child {
+        font-size: 14px;
+      }
+      .hero { padding-top: 8px; }
+      .orbit { min-height: unset; display: grid; gap: 12px; }
+      .qa-core, .bubble {
+        position: static;
+        width: auto;
+        min-height: unset;
+        transform: none !important;
+        animation: none;
+      }
+
+      .qa-core {
+        height: auto;
+        padding: 34px 20px;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 22px;
+        border-radius: 26px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+    }
+  
+    .cursor-glow {
+      position: fixed;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(40,215,255,.18), transparent 66%);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      opacity: .9;
+      mix-blend-mode: screen;
+      transition: opacity .25s ease;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .08;
+      background-image:
+        repeating-radial-gradient(circle at 0 0, rgba(255,255,255,.25) 0 1px, transparent 1px 7px);
+      mix-blend-mode: overlay;
+    }
+
+    .hero, .section, .contact, .nav {
+      position: relative;
+      z-index: 2;
+    }
+
+    .magnetic {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .case, .job, .skill {
+      will-change: transform, border-color, background;
+    }
+
+    .case {
+      transform-style: preserve-3d;
+    }
+
+    .case::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.16) 42%, transparent 62%);
+      transform: translateX(-120%);
+      transition: transform .7s ease;
+      pointer-events: none;
+    }
+
+    .case:hover::before {
+      transform: translateX(120%);
+    }
+
+    .case:hover {
+      transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
+      box-shadow: 0 28px 90px rgba(0,0,0,.34), 0 0 40px rgba(155,92,255,.16);
+    }
+
+    .case h3, .case p, .tag {
+      position: relative;
+      z-index: 2;
+    }
+
+    .problem-label {
+      display: block;
+      margin: 14px 0 7px;
+      color: rgba(255,255,255,.92);
+      font-weight: 950;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .impact {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.74);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      opacity: .75;
+      animation: drift 11s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .orb-a {
+      width: 120px;
+      height: 120px;
+      left: -34px;
+      top: 120px;
+      background: rgba(40,215,255,.24);
+    }
+
+    .orb-b {
+      width: 170px;
+      height: 170px;
+      right: -42px;
+      bottom: 70px;
+      background: rgba(255,94,168,.20);
+      animation-delay: -3s;
+    }
+
+    .orb-c {
+      width: 92px;
+      height: 92px;
+      right: 28%;
+      top: 36px;
+      background: rgba(155,92,255,.20);
+      animation-delay: -6s;
+    }
+
+    @keyframes drift {
+      from { transform: translate3d(0,0,0) scale(1); }
+      to { transform: translate3d(34px,-28px,0) scale(1.12); }
+    }
+
+    .qa-core {
+      position: absolute;
+      isolation: isolate;
+    }
+
+    .qa-core::before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      border-radius: 46px;
+      background: conic-gradient(from 180deg, var(--cyan), var(--violet), var(--pink), var(--cyan));
+      z-index: -1;
+      filter: blur(22px);
+      opacity: .55;
+      animation: spin 8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .pulse-line {
+      height: 1px;
+      width: 100%;
+      margin: 30px 0 0;
+      background: linear-gradient(90deg, transparent, rgba(40,215,255,.9), rgba(255,94,168,.9), transparent);
+      animation: pulseLine 2.6s ease-in-out infinite;
+      opacity: .75;
+    }
+
+    @keyframes pulseLine {
+      0%,100% { transform: scaleX(.35); opacity: .2; }
+      50% { transform: scaleX(1); opacity: .95; }
+    }
+
+    .job:hover {
+      transform: translateX(8px);
+      border-color: rgba(40,215,255,.42);
+      background: rgba(255,255,255,.11);
+    }
+
+    .skill {
+      cursor: default;
+    }
+
+    .skill:hover {
+      box-shadow: 0 0 28px rgba(40,215,255,.18);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+      .cursor-glow, .noise { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .cursor-glow, .noise { display: none; }
+      .hero-orb { display: none; }
+      .case:hover, .job:hover, .skill:hover {
+        transform: none;
+      }
+    }
+
+  
+    /* Stronger design layer — added on top of the existing creative version */
+    .hero-main-word {
+      display: inline-block;
+    }
+
+    .nav {
+      box-shadow: 0 18px 60px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .logo-badge {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-badge::after {
+      content: "";
+      position: absolute;
+      inset: -60%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+      transform: rotate(35deg) translateX(-120%);
+      animation: badgeShine 4.8s ease-in-out infinite;
+    }
+
+    @keyframes badgeShine {
+      0%, 72% { transform: rotate(35deg) translateX(-120%); }
+      100% { transform: rotate(35deg) translateX(120%); }
+    }
+
+    h1 {
+      text-shadow: 0 28px 80px rgba(155,92,255,.20);
+    }
+
+    .grad {
+      position: relative;
+      background-size: 200% 100%;
+      animation: gradientMove 5.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes gradientMove {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    .lead {
+      border-left: 2px solid rgba(40,215,255,.72);
+      padding-left: 18px;
+      max-width: 720px;
+    }
+
+    .btn.primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn.primary::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
+      transform: translateX(-120%);
+      transition: transform .8s ease;
+    }
+
+    .btn.primary:hover::after {
+      transform: translateX(120%);
+    }
+
+    .orbit::before {
+      content: "";
+      position: absolute;
+      inset: 80px 30px;
+      border: 1px dashed rgba(255,255,255,.16);
+      border-radius: 50%;
+      animation: slowSpin 24s linear infinite;
+    }
+
+    .orbit::after {
+      content: "";
+      position: absolute;
+      inset: 120px 90px;
+      border: 1px dashed rgba(40,215,255,.22);
+      border-radius: 50%;
+      animation: slowSpinReverse 32s linear infinite;
+    }
+
+    @keyframes slowSpin { to { transform: rotate(360deg); } }
+    @keyframes slowSpinReverse { to { transform: rotate(-360deg); } }
+
+    .qa-core {
+      z-index: 3;
+    }
+
+    .bubble {
+      z-index: 4;
+      border-color: rgba(255,255,255,.20);
+    }
+
+    .bubble:hover {
+      transform: translateY(-10px) scale(1.03);
+      border-color: rgba(40,215,255,.45);
+      background: rgba(255,255,255,.13);
+    }
+
+    .section {
+      box-shadow: 0 24px 100px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .case {
+      min-height: 292px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case .impact {
+      margin-top: auto;
+    }
+
+    .case h3 {
+      font-size: 27px;
+    }
+
+    .problem-label {
+      color: rgba(40,215,255,.92);
+    }
+
+    .impact {
+      border-top-color: rgba(40,215,255,.20);
+      color: rgba(255,255,255,.78);
+    }
+
+    .case:nth-child(2n) .problem-label {
+      color: rgba(255,94,168,.92);
+    }
+
+    .case:nth-child(3n) .problem-label {
+      color: rgba(82,230,167,.92);
+    }
+
+    .job {
+      transition: .25s ease;
+    }
+
+    .job::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 22px rgba(40,215,255,.55);
+    }
+
+    .job {
+      grid-template-columns: 14px 226px 1fr;
+      align-items: start;
+    }
+
+    .job > div:first-child {
+      grid-column: 2;
+    }
+
+    .job > p {
+      grid-column: 3;
+    }
+
+    .skills-cloud {
+      perspective: 900px;
+    }
+
+    .skill {
+      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.06));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(40,215,255,.16);
+      left: -90px;
+      top: -120px;
+      filter: blur(2px);
+    }
+
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,94,168,.14);
+      right: -90px;
+      bottom: -140px;
+      filter: blur(2px);
+    }
+
+    .contact > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 900px) {
+      .job {
+        grid-template-columns: 12px 1fr;
+      }
+
+      .job > div:first-child,
+      .job > p {
+        grid-column: 2;
+      }
+
+      .orbit::before,
+      .orbit::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .lead {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .case {
+        min-height: auto;
+      }
+    }
+
+  
+    /* Header name update */
+    .logo {
+      font-size: 22px;
+      letter-spacing: -0.035em;
+    }
+
+    .logo span:last-child {
+      font-size: 22px;
+      font-weight: 950;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: clip;
+      background: linear-gradient(90deg, #ffffff, #28d7ff, #9b5cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 640px) {
+      .logo {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .logo span:last-child {
+        font-size: 21px;
+        text-align: center;
+      }
+    }
+
+  
+    /* Final polish: case carousel + subtle digital artifacts */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(255,255,255,.025) 0px,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px,
+          transparent 4px
+        );
+      mix-blend-mode: overlay;
+      opacity: .34;
+      animation: artifactShift 7s steps(2, end) infinite;
+    }
+
+    @keyframes artifactShift {
+      0%, 100% { transform: translate3d(0,0,0); opacity: .22; }
+      20% { transform: translate3d(-1px,1px,0); opacity: .34; }
+      40% { transform: translate3d(1px,-1px,0); opacity: .28; }
+      60% { transform: translate3d(-2px,0,0); opacity: .38; }
+      80% { transform: translate3d(1px,2px,0); opacity: .25; }
+    }
+
+    .hero::after,
+    .section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background:
+        linear-gradient(90deg, transparent 0 48%, rgba(40,215,255,.08) 49%, transparent 50% 100%),
+        linear-gradient(0deg, transparent 0 63%, rgba(255,94,168,.06) 64%, transparent 65% 100%);
+      opacity: .24;
+      mix-blend-mode: screen;
+      animation: microGlitch 9s infinite;
+    }
+
+    @keyframes microGlitch {
+      0%, 92%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+      93% { clip-path: inset(18% 0 62% 0); transform: translate(-3px, 1px); }
+      94% { clip-path: inset(64% 0 20% 0); transform: translate(3px, -1px); }
+      95% { clip-path: inset(0 0 0 0); transform: translate(0); }
+    }
+
+    .qa-core {
+      overflow: hidden;
+    }
+
+    .qa-core::before {
+      display: none;
+    }
+
+    .case-carousel {
+      position: relative;
+      margin-top: 18px;
+      overflow: hidden;
+    }
+
+    .case-carousel::before,
+    .case-carousel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 38px;
+      width: 58px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .case-carousel::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(18,18,37,.72), transparent);
+    }
+
+    .case-carousel::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(18,18,37,.72), transparent);
+    }
+
+    .case-track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 8px 18px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(40,215,255,.55) rgba(255,255,255,.08);
+    }
+
+    .case-track::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .case-track::-webkit-scrollbar-track {
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+    }
+
+    .case-track::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      border-radius: 999px;
+    }
+
+    .carousel-card {
+      flex: 0 0 min(430px, 86vw);
+      min-height: 360px;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .carousel-card:hover {
+      transform: translateY(-10px) rotateX(3deg) rotateY(-4deg) scale(1.01);
+    }
+
+    .carousel-hint {
+      color: rgba(255,255,255,.58);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin: 4px 8px 0;
+      animation: hintPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes hintPulse {
+      0%, 100% { opacity: .45; transform: translateX(0); }
+      50% { opacity: .9; transform: translateX(8px); }
+    }
+
+    @media (max-width: 640px) {
+      .case-carousel {
+        overflow: visible;
+      }
+
+      .case-carousel::before,
+      .case-carousel::after {
+        display: none;
+      }
+
+      .case-track {
+        margin-left: -4px;
+        margin-right: -4px;
+        padding-left: 4px;
+        padding-right: 22px;
+      }
+
+      .carousel-card {
+        flex-basis: 82vw;
+        min-height: 420px;
+      }
+    }
+
+  
+    /* Real SVG social icons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .icon svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn:hover .icon {
+      transform: translateY(-1px) scale(1.08);
+      transition: transform .2s ease;
+    }
+
+  
+    /* Safe timeline polish: visible by default, animated when supported */
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 28px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(40,215,255,.85), rgba(155,92,255,.35), transparent);
+      opacity: .55;
+      pointer-events: none;
+    }
+
+    .job {
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .job::before {
+      animation: timelinePulse 2.2s ease-out infinite;
+    }
+
+    @keyframes timelinePulse {
+      0% { box-shadow: 0 0 0 0 rgba(40,215,255,.75); }
+      70% { box-shadow: 0 0 0 12px rgba(40,215,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(40,215,255,0); }
+    }
+
+    .job:hover {
+      transform: translateX(8px) scale(1.01);
+      border-color: rgba(40,215,255,.48);
+      background: rgba(255,255,255,.11);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .job {
+        animation: timelineRise .7s ease both;
+      }
+
+      .job:nth-child(1) { animation-delay: .05s; }
+      .job:nth-child(2) { animation-delay: .14s; }
+      .job:nth-child(3) { animation-delay: .23s; }
+      .job:nth-child(4) { animation-delay: .32s; }
+
+      @keyframes timelineRise {
+        from {
+          opacity: .18;
+          transform: translateX(-28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      .timeline::before {
+        left: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .timeline::before {
+        left: 22px;
+      }
+
+      .job:hover {
+        transform: none;
+      }
+    }
+
+  
+    /* Email CTA always highlighted */
+    .contact .btn.primary,
+    .hero-actions .btn.primary {
+      position: relative;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.18),
+        0 18px 60px rgba(40,215,255,.28),
+        0 0 36px rgba(155,92,255,.26);
+      animation: emailGlow 2.6s ease-in-out infinite;
+    }
+
+    .contact .btn.primary::before,
+    .hero-actions .btn.primary::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(155,92,255,.75), rgba(40,215,255,.75), rgba(255,94,168,.65));
+      z-index: -1;
+      filter: blur(14px);
+      opacity: .55;
+      animation: emailAura 2.6s ease-in-out infinite;
+    }
+
+    @keyframes emailGlow {
+      0%, 100% {
+        transform: translateY(0);
+        filter: brightness(1);
+      }
+      50% {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+      }
+    }
+
+    @keyframes emailAura {
+      0%, 100% { opacity: .35; transform: scale(.98); }
+      50% { opacity: .78; transform: scale(1.02); }
+    }
+
+  
+    /* Final CTA balance */
+    .hero .hero-actions {
+      margin-top: 34px;
+    }
+
+    .hero .hero-actions .btn:not(.primary) {
+      display: none;
+    }
+
+    .hero .btn.primary,
+    .contact .btn.primary,
+    .contact .btn {
+      animation: none !important;
+    }
+
+    .hero .btn.primary::before,
+    .contact .btn.primary::before,
+    .hero .btn.primary::after,
+    .contact .btn.primary::after {
+      display: none !important;
+    }
+
+    .hero .btn.primary {
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.18),
+        0 14px 42px rgba(40,215,255,.20);
+    }
+
+    .contact .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 680px;
+      margin: 28px auto 0;
+    }
+
+    .contact .btn,
+    .contact .btn.primary {
+      width: 100%;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: none;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .contact .btn:hover,
+    .contact .btn.primary:hover {
+      transform: translateY(-3px);
+      border-color: rgba(40,215,255,.52);
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 14px 34px rgba(40,215,255,.14);
+    }
+
+    .contact .btn .icon {
+      color: #fff;
+    }
+
+  
+    /* Final cleanup: remove visual artifacts and align social buttons */
+    .hero::after,
+    .section::after {
+      display: none !important;
+    }
+
+    .hero,
+    .section,
+    .contact {
+      overflow: hidden;
+    }
+
+    .timeline::before {
+      display: none !important;
+    }
+
+    .contact .hero-actions {
+      width: min(100%, 680px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact .btn,
+    .contact .btn.primary {
+      display: grid !important;
+      grid-template-columns: 28px auto 28px;
+      align-items: center;
+      justify-items: center;
+      gap: 10px;
+      text-align: center;
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+
+    .contact .btn .icon {
+      grid-column: 1;
+      width: 28px;
+      height: 28px;
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact .btn svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .contact .btn {
+      color: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .contact .btn,
+      .contact .btn.primary {
+        grid-template-columns: 28px auto 28px;
+        min-height: 70px;
+      }
+    }
+
+  
+    /* Final readability fix: no transparent unreadable cards */
+    .card,
+    .case,
+    .bubble,
+    .job,
+    .skill,
+    .contact .btn {
+      background: rgba(10, 15, 30, 0.9) !important;
+      border: 1px solid rgba(255,255,255,0.14) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .card p,
+    .case p,
+    .bubble p,
+    .job p,
+    .skill,
+    .impact,
+    .section-sub,
+    .lead {
+      color: rgba(255,255,255,0.88) !important;
+    }
+
+    .card h3,
+    .case h3,
+    .bubble h3,
+    .job-title,
+    .skill,
+    .tag {
+      color: rgba(255,255,255,0.98) !important;
+    }
+
+    /* Prevent decorative QA block from covering text on desktop */
+    .orbit {
+      isolation: isolate;
+    }
+
+    .qa-core {
+      z-index: 1 !important;
+      opacity: 0.72;
+    }
+
+    .bubble {
+      z-index: 3 !important;
+      box-shadow: 0 18px 44px rgba(0,0,0,.28);
+    }
+
+    .bubble:hover {
+      background: rgba(14, 22, 44, 0.96) !important;
+    }
+
+    /* Softer decorative glow so it does not create unreadable artifacts */
+    .hero-orb,
+    .orb-a,
+    .orb-b,
+    .orb-c {
+      opacity: .28 !important;
+      filter: blur(8px);
+    }
+
+    .qa-core::before,
+    .qa-core::after,
+    .hero::after,
+    .section::after {
+      display: none !important;
+    }
+
+    /* Keep mobile clean and readable */
+    @media (max-width: 640px) {
+      .qa-core {
+        opacity: 1;
+      }
+
+      .bubble,
+      .case,
+      .job {
+        background: rgba(10, 15, 30, 0.92) !important;
+      }
+    }
+
+  
+/* Center QA block */
+.qa-core {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* FORCE center QA block */
+.qa-core {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+
+    /* Fix overlap in hero orbit: QA becomes a background watermark */
+    .orbit {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .qa-core {
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      z-index: 0 !important;
+      opacity: .46 !important;
+      pointer-events: none;
+    }
+
+    .qa-core strong {
+      opacity: .7;
+    }
+
+    .qa-core span {
+      opacity: .45;
+    }
+
+    .bubble {
+      z-index: 3 !important;
+      background: rgba(10, 15, 30, 0.94) !important;
+    }
+
+    /* Reposition desktop bubbles so none covers the QA watermark */
+    @media (min-width: 901px) {
+      .b1 { top: 28px !important; left: 24px !important; }
+      .b2 { top: 70px !important; right: 0 !important; }
+      .b3 { bottom: 78px !important; left: 0 !important; }
+      .b4 { bottom: 0 !important; right: 54px !important; }
+      .b5 { top: 260px !important; right: 0 !important; }
+    }
+
+    /* On mobile, keep normal stacked readable layout */
+    @media (max-width: 640px) {
+      .qa-core {
+        opacity: 1 !important;
+        z-index: 1 !important;
+      }
+    }
+
+  
+/* Make QA watermark more visible */
+.qa-core {
+  opacity: 0.75 !important;
+}
+
+.qa-core strong {
+  opacity: 0.9 !important;
+}
+
+.qa-core span {
+  opacity: 0.7 !important;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <nav class="nav">
+    <a class="logo" href="#top">
+      <span>QA Polina Zherebtsova</span>
+    </a>
+    <div class="links">
+      <a href="#cases">Cases</a>
+      <a href="#ai">AI</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap" id="top">
+    <section class="hero">
+      <span class="hero-orb orb-a"></span>
+      <span class="hero-orb orb-b"></span>
+      <span class="hero-orb orb-c"></span>
+      <div>
+        <div class="kicker">Manual QA · Web / Mobile / API · AI-assisted workflow</div>
+        <h1>I break products<br><span class="grad">before users do.</span></h1>
+        <p class="lead">
+          I test web, mobile and API products through messy flows, hidden states, design mismatches,
+          API inconsistencies and release risks. My focus is not only to find bugs — it is to explain why they matter.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary magnetic" href="mailto:polina667@gmail.com">
+          <span class="icon" aria-hidden="true">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-6.52 4.08a2.05 2.05 0 0 1-2.16 0L4.4 8.25A1 1 0 0 1 5.46 6.55L12 10.64l6.54-4.09a1 1 0 1 1 1.06 1.7Z"/>
+  </svg>
+</span>
+          Email
+        </a>
+        </div>
+        <div class="pulse-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="orbit" aria-label="QA focus areas">
+        <div class="qa-core">
+          <div>
+            <strong>QA</strong>
+            <span>2+ years<br>risk-based testing</span>
+          </div>
+        </div>
+
+        <div class="bubble b1">
+          <h3>Web</h3>
+          <p>UI, responsive, content, admin panels, redirects.</p>
+        </div>
+
+        <div class="bubble b2">
+          <h3>Mobile</h3>
+          <p>iOS / Android flows, UX, geolocation, roles.</p>
+        </div>
+
+        <div class="bubble b3">
+          <h3>API</h3>
+          <p>Postman, Swagger, auth, tokens, payloads.</p>
+        </div>
+
+        <div class="bubble b4">
+          <h3>Figma</h3>
+          <p>Design matching, UX issues, visual accuracy.</p>
+        </div>
+
+        <div class="bubble b5">
+          <h3>AI</h3>
+          <p>Faster docs, better coverage, sharper reports.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-head">
+        <h2>Selected QA cases</h2>
+        <p class="section-sub">Risk-first QA snapshots: what could break, why it matters, and what I validated before release.</p>
+      </div>
+
+      
+      <div class="case-carousel" aria-label="Selected QA cases carousel">
+        <div class="case-track">
+
+          <article class="case carousel-card" style="--accent: var(--green)">
+            <span class="tag">Healthcare</span>
+            <h3>Healthcare mobile apps</h3>
+            <span class="problem-label">Problem I looked for</span>
+            <p>Broken profile flows, missing states, incorrect directory behaviour, output issues and UI mismatches against Figma.</p>
+            <div class="impact">Impact: catches trust-breaking UX defects before release.</div>
+          </article>
+
+          <article class="case carousel-card" style="--accent: var(--cyan)">
+            <span class="tag">Logistics</span>
+            <h3>Logistics mobile app</h3>
+            <span class="problem-label">Problem I looked for</span>
+            <p>Incorrect permissions, broken document flows, unreliable geolocation, confusing task states and role-based access gaps.</p>
+            <div class="impact">Impact: protects operational workflows from critical blockers.</div>
+          </article>
+
+          <article class="case carousel-card" style="--accent: var(--pink)">
+            <span class="tag">Voice search</span>
+            <h3>Voice search flow</h3>
+            <span class="problem-label">Problem I looked for</span>
+            <p>False “not found” results, long loaders, unstable recognition, mismatch between admin data and visible search output.</p>
+            <div class="impact">Impact: prevents users from losing trust in core search.</div>
+          </article>
+
+          <article class="case carousel-card" style="--accent: var(--orange)">
+            <span class="tag">Aviation</span>
+            <h3>Aviation logistics app</h3>
+            <span class="problem-label">Problem I looked for</span>
+            <p>Missing saved data, incorrect crew assignment, inconsistent transport/hotel logic, permit issues and PDF output gaps.</p>
+            <div class="impact">Impact: reduces risk in business-critical travel logistics.</div>
+          </article>
+
+          <article class="case carousel-card" style="--accent: var(--violet)">
+            <span class="tag">Web / CMS</span>
+            <h3>CMS & admin panels</h3>
+            <span class="problem-label">Problem I looked for</span>
+            <p>Broken admin actions, content rendering issues, CMS edge cases, responsive layout problems and API inconsistencies.</p>
+            <div class="impact">Impact: keeps content and admin workflows reliable.</div>
+          </article>
+
+          <article class="case carousel-card" style="--accent: var(--cyan)">
+            <span class="tag">SEO systems</span>
+            <h3>Redirects & bots</h3>
+            <span class="problem-label">Problem I looked for</span>
+            <p>Wrong redirect chains, locale-specific issues, bot/user rendering differences, cache/CDN behaviour and technical SEO risks.</p>
+            <div class="impact">Impact: catches hidden production issues regular UI testing can miss.</div>
+          </article>
+
+        </div>
+
+        <div class="carousel-hint">Swipe horizontally →</div>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="section-head">
+        <h2>AI, but with QA judgment</h2>
+        <p class="section-sub">I use AI to move faster, not to outsource thinking. The final decision stays with testing logic, product risk and evidence.</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case" style="--accent: var(--violet)">
+          <span class="tag">Coverage</span>
+          <h3>Scenarios</h3>
+          <span class="problem-label">QA value</span>
+          <p>Generating checklist drafts, edge cases, negative flows and role-based test ideas.</p>
+          <div class="impact">Helps expand coverage before testing starts.</div>
+        </article>
+
+        <article class="case" style="--accent: var(--cyan)">
+          <span class="tag">Analysis</span>
+          <h3>Logs / API</h3>
+          <span class="problem-label">QA value</span>
+          <p>Structuring observations from DevTools, API responses, logs and complex reproduction steps.</p>
+          <div class="impact">Helps turn technical noise into clear evidence.</div>
+        </article>
+
+        <article class="case" style="--accent: var(--pink)">
+          <span class="tag">Clarity</span>
+          <h3>Bug reports</h3>
+          <span class="problem-label">QA value</span>
+          <p>Turning messy findings into clear reports with impact, steps, actual result and expected result.</p>
+          <div class="impact">Helps developers reproduce and fix faster.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-head">
+        <h2>Work timeline</h2>
+        
+      </div>
+
+      <div class="timeline">
+        <article class="job">
+          <div>
+            <div class="job-title">QA Engineer</div>
+            <div class="job-date">Nov 2025 — Present</div>
+          </div>
+          <p>Web testing, REST API checks, DevTools investigation, admin functionality, auth/token flows, Jenkins regression runs, Bash scripts, user-agent checks and technical issue analysis.</p>
+        </article>
+
+        <article class="job">
+          <div>
+            <div class="job-title">Manual QA Engineer</div>
+            <div class="job-date">Apr 2025 — Oct 2025</div>
+          </div>
+          <p>Multiple web, backend and mobile projects: functional, regression, exploratory, responsive testing, Figma validation, Postman/Swagger, geolocation, roles, Stripe sandbox and Jira documentation.</p>
+        </article>
+
+        <article class="job">
+          <div>
+            <div class="job-title">QA Engineer · Part-time</div>
+            <div class="job-date">Mar 2025 — Jun 2025 · Part-time</div>
+          </div>
+          <p>Laravel, WordPress and OpenCart CMS testing, cross-browser/responsive checks, API testing, K6 basics and documentation in Worksection / Google Docs.</p>
+        </article>
+
+        <article class="job">
+          <div>
+            <div class="job-title">QA Engineer</div>
+            <div class="job-date">Aug 2024 — Mar 2025</div>
+          </div>
+          <p>Content accuracy, navigation logic, UI behaviour, exploratory testing, usability checks, defect reporting and fix verification.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-head">
+        <h2>Toolbox</h2>
+        <p class="section-sub">The tools and areas I use most often in real QA work.</p>
+      </div>
+
+      <div class="skills-cloud">
+        <span class="skill">Manual testing</span>
+        <span class="skill">Functional testing</span>
+        <span class="skill">Regression</span>
+        <span class="skill">Exploratory testing</span>
+        <span class="skill">API testing</span>
+        <span class="skill">Postman</span>
+        <span class="skill">Swagger</span>
+        <span class="skill">Chrome DevTools</span>
+        <span class="skill">Figma</span>
+        <span class="skill">Jira</span>
+        <span class="skill">SQL</span>
+        <span class="skill">DBeaver</span>
+        <span class="skill">Jenkins</span>
+        <span class="skill">Bash</span>
+        <span class="skill">K6</span>
+        <span class="skill">Firebase</span>
+        <span class="skill">Python / Pytest / Selenium basics</span>
+        <span class="skill">HTML / CSS basics</span>
+        <span class="skill">HTTP / REST basics</span>
+        <span class="skill">AI-assisted QA</span>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Let’s talk quality.</h2>
+      <p>Remote QA Engineer from Ukraine. Interested in teams where QA is involved in product understanding, release confidence and design quality.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn primary magnetic" href="mailto:polina667@gmail.com">
+          <span class="icon" aria-hidden="true">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-6.52 4.08a2.05 2.05 0 0 1-2.16 0L4.4 8.25A1 1 0 0 1 5.46 6.55L12 10.64l6.54-4.09a1 1 0 1 1 1.06 1.7Z"/>
+  </svg>
+</span>
+          Email
+        </a>
+        <a class="btn magnetic" href="https://linkedin.com/in/polina-zherebtsova-9b798641" target="_blank" rel="noopener noreferrer">
+          <span class="icon" aria-hidden="true">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.2 8h4.6v15H.2V8Zm7.1 0h4.4v2.05h.06c.62-1.17 2.13-2.4 4.39-2.4 4.7 0 5.56 3.1 5.56 7.12V23h-4.6v-7.3c0-1.74-.03-3.97-2.42-3.97-2.43 0-2.8 1.9-2.8 3.85V23H7.3V8Z"/>
+  </svg>
+</span>
+          LinkedIn
+        </a>
+        <a class="btn magnetic" href="https://t.me/pilini_667" target="_blank" rel="noopener noreferrer">
+          <span class="icon" aria-hidden="true">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M21.94 4.16a1.5 1.5 0 0 0-1.58-.21L2.78 10.73c-1.2.46-1.15 1.26-.2 1.55l4.48 1.4 1.72 5.28c.22.68.55.85.94.85.31 0 .52-.14.82-.43l2.15-2.08 4.46 3.3c.82.45 1.41.22 1.62-.76l3.16-14.1a1.5 1.5 0 0 0 .01-1.58ZM8.1 12.95l9.7-6.1c.48-.3.92-.13.56.2l-7.85 7.08-.3 3.27-1.1-3.46-1.01-.99Z"/>
+  </svg>
+</span>
+          Telegram
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const glow = document.querySelector('.cursor-glow');
+    if (glow && window.matchMedia('(pointer: fine)').matches) {
+      window.addEventListener('mousemove', (event) => {
+        glow.style.left = event.clientX + 'px';
+        glow.style.top = event.clientY + 'px';
+      });
+    }
+
+    const magneticItems = document.querySelectorAll('.magnetic, .case');
+    magneticItems.forEach((item) => {
+      item.addEventListener('mousemove', (event) => {
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+        const rect = item.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
+        const moveX = x / 18;
+        const moveY = y / 18;
+        if (item.classList.contains('case')) {
+          item.style.transform = `translateY(-10px) rotateX(${-moveY / 2}deg) rotateY(${moveX / 2}deg)`;
+        } else {
+          item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+      });
+
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = '';
+      });
+    });
+  </script>
+
+
+  <script>
+    document.querySelectorAll('.case-track').forEach((track) => {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      track.addEventListener('mousedown', (event) => {
+        isDown = true;
+        track.classList.add('dragging');
+        startX = event.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+      });
+
+      track.addEventListener('mouseleave', () => {
+        isDown = false;
+        track.classList.remove('dragging');
+      });
+
+      track.addEventListener('mouseup', () => {
+        isDown = false;
+        track.classList.remove('dragging');
+      });
+
+      track.addEventListener('mousemove', (event) => {
+        if (!isDown) return;
+        event.preventDefault();
+        const x = event.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.4;
+        track.scrollLeft = scrollLeft - walk;
+      });
+    });
+  </script>
+
+</body>
+</html>
