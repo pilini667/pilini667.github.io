@@ -124,6 +124,11 @@
       padding: 36px 0 70px;
     }
 
+    .hero-copy {
+      min-width: 0;
+      padding-right: clamp(8px, 2vw, 28px);
+    }
+
     .kicker {
       width: fit-content;
       padding: 9px 13px;
@@ -140,12 +145,14 @@
     h1 {
       margin: 0;
       font-size: clamp(56px, 9vw, 116px);
-      line-height: .82;
+      line-height: .88;
       letter-spacing: -.085em;
       animation: rise .8s .12s ease both;
     }
 
     .grad {
+      display: inline-block;
+      padding: 0 .12em .08em 0;
       background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
       -webkit-background-clip: text;
       color: transparent;
@@ -1598,7 +1605,7 @@
       <span class="hero-orb orb-a"></span>
       <span class="hero-orb orb-b"></span>
       <span class="hero-orb orb-c"></span>
-      <div>
+      <div class="hero-copy">
         <div class="kicker">Manual QA · Web / Mobile / API · AI-assisted workflow</div>
         <h1>I break products<br><span class="grad">before users do.</span></h1>
         <p class="lead">
